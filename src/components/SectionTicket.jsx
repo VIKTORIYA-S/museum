@@ -8,7 +8,7 @@ function SectionTicket() {
   const [ticketType, setTicketType] = useState('radio_1');
   const [basicCount, setBasicCount] = useState(1);
   const [seniorCount, setSeniorCount] = useState(1);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   const handleBasicChange = (delta) => {
     setBasicCount(prev => Math.max(0, prev + delta));

@@ -12,14 +12,14 @@ function Modal({ onClose }) {
 //   console.log('Modal rendered. onClose type:', typeof onClose, onClose);
 // }, [onClose]);
 
-  useEffect(() => {
+//   useEffect(() => {
     // блокируем скролл страницы
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prevOverflow || "auto";
-    };
-  }, []);
+//     const prevOverflow = document.body.style.overflow;
+//     document.body.style.overflow = "hidden";
+//     return () => {
+//       document.body.style.overflow = prevOverflow || "auto";
+//     };
+//   }, []);
 
   // безопасный вызов onClose
   const safeClose = () => {
