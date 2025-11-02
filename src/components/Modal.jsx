@@ -4,15 +4,16 @@ import Card_1 from '../assets/img/card_1.png';
 import Card_2 from '../assets/img/card_2.png';
 
 function Modal({ onClose }) {
-  // Диагностика
-  console.log('Modal rendered. onClose type:', typeof onClose, onClose);
+  // DEBUG: покажем, что реально приходит в onClose
+  // Оставьте пока для диагностики — потом можно убрать
+//   console.log('Modal rendered. onClose type:', typeof onClose, onClose);
+
+//   useEffect(() => {
+//   console.log('Modal rendered. onClose type:', typeof onClose, onClose);
+// }, [onClose]);
 
   useEffect(() => {
-    console.log('Modal rendered. onClose type:', typeof onClose, onClose);
-  }, [onClose]);
-
-  useEffect(() => {
-    // блокируем скролл страницы, пока открыт модал
+    // блокируем скролл страницы
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
@@ -20,6 +21,7 @@ function Modal({ onClose }) {
     };
   }, []);
 
+  // безопасный вызов onClose
   const safeClose = () => {
     if (typeof onClose === "function") {
       onClose();
@@ -30,15 +32,15 @@ function Modal({ onClose }) {
 
   return (
     <div className="modal">
-      {/* Клик по overlay закрывает модал */}
+      {/* клик по overlay закрывает модалку */}
       <div className="overlay" onClick={safeClose}>
-        {/* Остановка всплытия клика внутри */}
+        {/* остановим всплытие внутри белой части */}
         <div
           className="overlay__white"
           onClick={(e) => e.stopPropagation()}
           style={{ maxHeight: "90vh", overflowY: "auto", WebkitOverflowScrolling: "touch" }}
         >
-          {/* Кнопка закрытия */}
+          {/* крестик закрытия */}
           <button
             type="button"
             aria-label="Close modal"
@@ -51,6 +53,7 @@ function Modal({ onClose }) {
 
           <div className="overlay__container">
             <div className="ticket-form">
+              {/* ВНИМАНИЕ: в SVG используем camelCase атрибуты */}
               <svg
                 className="ticket-form__logo"
                 width="49"
@@ -77,61 +80,30 @@ function Modal({ onClose }) {
               <h5 className="ticket-form__subtitle">Tour to Louvre</h5>
               <hr className="ticket-form__line" />
               <div className="ticket-form__date">
-                <input
-                  className="ticket-form__input-date"
-                  type="date"
-                  id="input-date"
-                  placeholder="Date"
-                />
-                <input
-                  className="ticket-form__input-time"
-                  name="time"
-                  type="time"
-                  id="input-time"
-                  placeholder="Time"
-                />
+                <input className="ticket-form__input-date" type="date" id="input-date" placeholder="Date" />
+                <input className="ticket-form__input-time" name="time" type="time" id="input-time" placeholder="Time" />
               </div>
-              <input
-                className="ticket-form__input-name"
-                type="text"
-                id="input-name"
-                placeholder="Name"
-              />
-              <input
-                className="ticket-form__input-email"
-                type="text"
-                id="input-email"
-                placeholder="Email"
-              />
-              <input
-                className="ticket-form__input-phone"
-                type="text"
-                id="input-phone"
-                placeholder="Phone"
-              />
-              <input
-                className="ticket-form__input-type"
-                type="text"
-                id="input-type"
-                placeholder="Ticket Type"
-              />
+              <input className="ticket-form__input-name" type="text" id="input-name" placeholder="Name" />
+              <input className="ticket-form__input-email" type="text" id="input-email" placeholder="Email" />
+              <input className="ticket-form__input-phone" type="text" id="input-phone" placeholder="Phone" />
+              <input className="ticket-form__input-type" type="text" id="input-type" placeholder="Ticket Type" />
               <div className="price">
                 <span className="price__text">Entry ticket</span>
                 <hr className="price__line" />
                 <div className="price__wrapper">
                   <h4 className="price__title">Basic 18+ (20 €)</h4>
                   <div className="price__counter">
-                    <button className="price__minus" type="button">-</button>
+                    <div className="price__minus">-</div>
                     <div className="price__number">2</div>
-                    <button className="price__plus" type="button">+</button>
+                    <div className="price__place">+</div>
                   </div>
                 </div>
                 <div className="price__wrapper">
                   <h4 className="price__title">Senior 65+ (10 €)</h4>
                   <div className="price__counter">
-                    <button className="price__minus" type="button">-</button>
+                    <div className="price__minus">-</div>
                     <div className="price__number">2</div>
-                    <button className="price__plus" type="button">+</button>
+                    <div className="price__place">+</div>
                   </div>
                 </div>
               </div>
@@ -143,19 +115,19 @@ function Modal({ onClose }) {
                   <h2 className="overview__title">Overview</h2>
                   <h3 className="overview__subtitle">Tour to Louvre</h3>
                   <div className="overview__date">
-                    <img src={require('../assets/icon/date.png')} alt="Date icon" />
+                    <img src="assets/icon/date.png" alt="" />
                     <h4>Friday, August 19</h4>
                   </div>
                   <div className="overview__time">
-                    <img src={require('../assets/icon/Time.svg')} alt="Time icon" />
-                    <h4>10:00 AM</h4>
+                    <img src="assets/icon/Time.svg" alt="" />
+                    <h4>Friday, August 19</h4>
                   </div>
                   <div className="overview__check">
-                    <img src={require('../assets/icon/check_circle.png')} alt="Check icon" />
-                    <h4>Confirmed</h4>
+                    <img src="assets/icon/check_circle.png" alt="" />
+                    <h4>Friday, August 19</h4>
                   </div>
                 </div>
-                <img className="profile__foto" src={Galery_3_3} alt="Gallery" />
+                <img className="profile__foto" src={Galery_3_3} alt="" />
               </div>
 
               <div className="overview__wrapper">
@@ -177,9 +149,9 @@ function Modal({ onClose }) {
                 <h3>Total:</h3>
                 <span>60 €</span>
               </div>
-              <img className="card__1" src={Card_1} alt="Card 1" />
-              <img className="card__2" src={Card_2} alt="Card 2" />
-              <button className="ticket-card__button" type="button">Buy tickets</button>
+              <img className="card__1" src={Card_1} alt="" />
+              <img className="card__2" src={Card_2} alt="" />
+              <button className="ticket-card__button">Buy tickets</button>
             </div>
           </div>
         </div>
