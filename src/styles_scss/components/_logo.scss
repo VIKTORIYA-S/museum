@@ -1,0 +1,22 @@
+.logo {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    gap: 24px;
+    margin-right: 50px;
+
+&__text {
+    font-family: var(--font-title);
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 0.18em;
+    color: var(--white);
+    padding-top: 10px;
+}
+
+&__text:hover {
+    color: var(--font-gold);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+}

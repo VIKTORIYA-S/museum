@@ -1,0 +1,94 @@
+@import "./_vars";
+@import "./components/header";
+@import "./components/logo";
+@import "./components/navigation";
+@import "./components/modal";
+@import "./components/burger";
+@import "./components/hero";
+@import "./components/welcomeSection";
+@import "./components/sectionHeader";
+@import "./components/welcomeCard";
+@import "./components/welcomeList";
+@import "./components/welcomePlase";
+@import "./components/sectionVideo";
+@import "./components/sectionGallery";
+@import "./components/visitingSection";
+@import "./components/sectionTicket";
+@import "./components/parallax";
+@import "./components/contacts";
+@import "./components/footer";
+
+
+
+:root {
+  font-family: 'Roboto', 'Forum', Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  font-size: 22px;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+
+li {
+  list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+main {
+  overflow-x: hidden;
+}

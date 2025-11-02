@@ -1,0 +1,128 @@
+.footer {
+    width: 100%;
+    padding-top: 82px;
+    background: var(--bg-dark);
+
+&__container {
+    max-width: 1440px;
+    width: 100%;
+    padding-bottom: 70px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+&__social {
+    display: flex;
+    gap: 25px;
+    // padding-top: 85px;
+    margin-left: 170px;
+    justify-content: center;
+}
+
+&__social_circle {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--dark-gray);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+&__social_circle:hover {
+    border: 1px solid var(--span-gold);
+    transition: all 0.5s ease-in-out;
+}
+
+&__social_circle a {
+    padding-top: 8px;
+}
+
+&__social_circle a:hover svg path {
+    fill: var(--span-gold);
+    transition: all 0.5s ease-in-out;
+}
+
+&__text {
+    font-family: var(--font-text);
+    color: var(--white);
+    font-weight: 100;
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    position: relative;
+}
+
+&__text::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    content: "";
+    width: 0;
+    height: 1px;
+    background-color: var(--span-gold);
+    transition: width 0.3s ease-in-out;
+}
+
+&__link_2::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    content: "";
+    width: 0;
+    margin-left: 20px;
+    height: 1px;
+    background-color: var(--span-gold);
+    transition: width 0.3s ease-in-out;
+}
+
+&__text:hover {
+    color: var(--span-gold);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+&__text:hover::after {
+    width: 100%;
+    margin-top: 5px;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+&__hr {
+    width: 100%;
+    margin: 0 auto 70px auto;
+}
+}
+
+
+@media screen and (max-width: 1200px) {
+    .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .footer {
+    &__container_1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__social {
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    &__container_2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+}

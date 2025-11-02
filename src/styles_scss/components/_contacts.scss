@@ -1,0 +1,168 @@
+.contacts {
+  padding: 75px 0;
+    background: var(--white);
+
+  &__section {
+    padding-top: 70px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__info {
+    width: 282px;
+    text-align: left;
+    flex: 0 0 282px;
+  }
+
+  &__map-wrap {
+    flex: 1 1 auto;
+    max-width: calc(100% - 320px);
+    height: 620px;
+  }
+
+  &__map-wrap, .contacts__map-wrap {
+    position: relative;
+    width: 100%;
+    // padding-bottom: 62.5%;
+    height: 0;
+  }
+
+  &__map {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 620px;
+    border: 0;
+    display: block;
+  }
+
+  &__title {
+    font-family: var(--font-text);
+    color: var(--black);
+    font-weight: 500;
+    font-size: 28px;
+    margin-bottom: 52px;
+}
+
+  &__text {
+    font-family: var(--font-text);
+    color: var(--black);
+    font-weight: 300;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+&__text_link a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+&__text_link a:hover {
+    color: var(--font-gold);
+    transition: all 0.5s ease-in-out;
+}
+}
+
+/* ---------- LARGE LAPTOPS / DESKTOPs (убираем фиксированные 960×620) ---------- */
+@media (min-width: 1201px) {
+  .contacts {
+    &__map {
+      /* можно ограничить максимальный размер карты для десктопа */
+      max-width: 960px;
+      max-height: 620px;
+      /* эти свойства не обязательно нужны, т.к. wrapper контролирует соотношение */
+    }
+    &__map-wrap {
+      max-width: 960px;
+      padding-bottom: 660px; /* сохраняем оригинальное соотношение 960x620 */
+    }
+  }
+}
+
+/* ---------- LAPTOP / TABLET (<= 1024px) ---------- */
+@media (max-width: 1024px) {
+  .contacts {
+    padding: 60px 0;
+
+    &__wrapper {
+      gap: 30px;
+    }
+
+    &__info {
+      width: 240px;
+      flex: 0 0 240px;
+    }
+
+    &__title { font-size: 24px; margin-bottom: 36px; }
+    &__text { font-size: 18px; margin-bottom: 18px; }
+
+    /* уменьшить высоту карты на планшетах, но сохранить соотношение */
+    &__map-wrap {
+      max-width: 760px;
+      padding-bottom: calc(480 / 760 * 100%); /* 480px высота при 760 ширине */
+    }
+  }
+}
+
+/* ---------- TABLET / MOBILE (<= 768px) — стек вертикально ---------- */
+@media (max-width: 768px) {
+  .contacts {
+    padding: 40px 0;
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center; /* центрируем текст в мобильной версии */
+    }
+
+    &__info {
+      width: 100%;
+      max-width: 640px;
+      flex: none;
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    &__title {
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    &__text {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    /* карта под текстом, занимает всю ширину контейнера */
+    &__map-wrap {
+      width: 100%;
+      max-width: 100%;
+      padding-bottom: calc(360 / 1000 * 100%); /* примерно 36% высоты */
+    }
+
+    /* если нужно — добавим небольшой отступ между текстом и картой */
+    &__map-wrap { margin-top: 12px; }
+  }
+}
+
+/* ---------- SMALL PHONES (<= 480px) ---------- */
+@media (max-width: 480px) {
+  .contacts {
+    padding: 30px 0;
+
+    &__title { font-size: 20px; margin-bottom: 14px; }
+    &__text { font-size: 15px; margin-bottom: 10px; }
+
+    &__map-wrap {
+      padding-bottom: calc(260 / 1000 * 100%); /* чуть более компактно */
+    }
+  }
+}

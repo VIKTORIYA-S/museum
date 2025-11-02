@@ -1,0 +1,19 @@
+.section__title {
+    width: 100%;
+    font-family: var(--font-title);
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+    color: var(--font-gold);
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.section__line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-button);
+    margin-bottom: 75px;
+    border: none;
+}

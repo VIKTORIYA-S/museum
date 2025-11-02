@@ -1,0 +1,257 @@
+.video {
+        padding: 0;
+        padding-bottom: 10px;
+        background-color: #fff;
+
+    &__container {
+        padding-top: 20px;
+    }
+
+    &__wrapper_title {
+        margin-bottom: 0;
+    }
+
+    &__title {
+        font-size: 40px;
+        line-height: 60px;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+    }
+
+    &__main_wrapper {
+        height: 780px;
+    }
+
+    &__play {
+        width: 80px;
+        height: 80px;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        top: 43%;
+    }
+
+    &__play::before {
+        border-top: 23px solid transparent;
+        border-left: 33px solid #fff;
+        border-bottom: 24px solid transparent;
+        transform: rotate(5deg);
+        top: 49%;
+        left: 82%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__control_wrapper {
+        height: 63px;
+    }
+
+    &__main {
+        width: 100%;
+        max-height: 780px;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__small_wrapper {
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+    &__small_container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: hidden; /* или auto, если хочешь скролл */
+        gap: 20px;
+    }
+
+    &__item {
+        // max-width: 354px;
+        width: 100%;
+        height: 198px;
+    }
+
+    &__dotter_line {
+        max-width: 320px;
+        display: flex;
+        margin: 40px auto;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    &__text {
+        font-family: var(--font-text);
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 38.5px;
+        text-align: center;
+        vertical-align: top;
+        color: var(--black);
+        margin-bottom: 40px;
+    }
+}
+
+.slick-slider {
+    margin-bottom: 140px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -60px;
+    gap: 18px;
+}
+
+.slick-dots li.slick-active button {
+    background: var(--color-button);
+}
+
+.slick-dots li {
+    margin: 0 18px;
+}
+
+.slick-dots li button {
+    border-radius: 50%;
+    background: var(--light-gray);
+}
+
+.slick-dots li button::before {
+    content: '';
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 120%;
+    color: var(--color-button);
+    z-index: 5;
+}
+
+.slick-next {
+    right: 450px;
+}
+
+.slick-prev {
+    left: 450px;
+}
+
+.slick-next::before,
+.slick-prev::before {
+    content: '<<';
+    font-family: var(--font-text);
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.1em;
+    color: var(--color-button);
+}
+
+.slick-next::before {
+    content: ">>";
+}
+
+.section__line {
+    margin-bottom: 40px;
+}
+
+iframe.video__item {
+    width: 354px;
+  max-width: none;
+  display: block;
+}
+
+
+
+
+@media (max-width: 1024px) {
+  .video {
+    &__title {
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    &__main_wrapper {
+      height: 480px; /* уменьшаем высоту основного видео */
+    }
+
+    &__item {
+      max-width: 280px;
+      height: 160px;
+    }
+  }
+
+  .slick-next {
+    right: 280px;
+  }
+
+  .slick-prev {
+    left: 280px;
+  }
+}
+
+/* ---------- Мобильные ---------- */
+@media (max-width: 768px) {
+  .video {
+    padding: 30px 0;
+
+    &__title {
+      font-size: 26px;
+      line-height: 38px;
+      letter-spacing: 2px;
+    }
+
+    &__main_wrapper {
+      height: auto;
+    }
+
+    &__item {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9; /* автоматическая адаптация видео */
+      margin: 0 auto;
+    }
+
+    &__small_container {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+  }
+
+  iframe.video__item {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Прячем стрелки, если они мешают */
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+
+  /* Центрируем точки */
+  .slick-dots {
+    bottom: -40px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* ---------- Маленькие телефоны ---------- */
+@media (max-width: 480px) {
+  .video {
+    &__title {
+      font-size: 22px;
+      line-height: 32px;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  iframe.video__item {
+    border-radius: 8px;
+  }
+}
