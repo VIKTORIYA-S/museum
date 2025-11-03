@@ -10,8 +10,8 @@ import CheckIcon from '../assets/icon/check_circle.png';
 function Modal({ onClose = () => {} }) {
   // DEBUG: покажем, что реально приходит в onClose
   // Оставьте пока для диагностики — потом можно убрать
-  console.log('Modal rendered. onClose type:', typeof onClose);
-console.trace();
+//   console.log('Modal rendered. onClose type:', typeof onClose);
+// console.trace();
 
  // блокировка скролла страницы при открытой модалке
   useEffect(() => {
@@ -29,50 +29,17 @@ console.trace();
   return (
     <div className="modal" style={{ zIndex: 999 }}>
       {/* клик по overlay закрывает модалку */}
-      <div className="overlay" onClick={safeClose}
-    //   style={{
-    //       position: 'fixed',
-    //       inset: 0,
-    //       display: 'flex',
-    //       alignItems: 'center',
-    //       justifyContent: 'center',
-    //       background: 'rgba(0,0,0,0.6)',
-    //       zIndex: 999
-    //     }}
-        >
+      <div className="overlay" onClick={safeClose}>
         {/* остановим всплытие внутри белой части */}
         <div
           className="overlay__white"
-          onClick={(e) => e.stopPropagation()}
-          style={{
-            position: 'relative',
-            maxHeight: '90vh',
-            overflowY: 'auto',
-            WebkitOverflowScrolling: 'touch',
-            background: 'var(--white)',
-            padding: '30px',
-            borderRadius: 8,
-            zIndex: 1000
-          }}
-        >
+          onClick={(e) => e.stopPropagation()}>
           {/* крестик закрытия */}
           <button
             type="button"
             aria-label="Close modal"
             className="overlay__close"
-            onClick={safeClose}
-            style={{
-              position: 'absolute',
-              top: 16,
-              right: 16,
-              width: 36,
-              height: 36,
-              border: 'none',
-              background: 'transparent',
-              cursor: 'pointer',
-              zIndex: 1100
-            }}
-          >
+            onClick={safeClose}>
             <span></span>
             <span className="two"></span>
           </button>

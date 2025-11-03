@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Modal from './Modal';
 import Ticket_1 from '../assets/img/ticket_1.png';
 import SectionHeader from './SectionHeader';
@@ -20,6 +20,13 @@ function SectionTicket() {
     setIsModalOpen(false);
   }
 
+  // Цены для каждого типа билета
+  const prices = {
+    radio_1: { basic: 40, senior: 20 },
+    radio_2: { basic: 30, senior: 15 },
+    radio_3: { basic: 20, senior: 10 },
+  };
+
   const handleBasicChange = (delta) => {
     setBasicCount(prev => Math.max(0, prev + delta));
   };
@@ -28,7 +35,62 @@ function SectionTicket() {
     setSeniorCount(prev => Math.max(0, prev + delta));
   };
 
-  const totalPrice = (basicCount * 20 + seniorCount * 15); // пример расчёта
+   const currentPrices = prices[ticketType];
+
+     const totalPrice = basicCount * currentPrices.basic + seniorCount * currentPrices.senior;
+
+     const handleTicketTypeChange = (id) => {
+    setTicketType(id);
+  };
+
+  // Безопасное обновление с ограничением по минимуму 0
+  // const handleBasicChange = (newCount) => {
+  //   setBasicCount(Math.max(0, newCount));
+  // };
+
+  // const handleSeniorChange = (newCount) => {
+  //   setSeniorCount(Math.max(0, newCount));
+  // };
+
+
+  // const totalPrice = (basicCount * 20 + seniorCount * 15); // пример расчёта
+
+  // const handleRadioChange = (value) => {
+  //   switch (value) {
+  //     case "radio_1":
+  //       setBasicCount(40);
+  //       setSeniorCount(20);
+  //       break;
+  //     case "radio_2":
+  //       setBasicCount(30);
+  //       setSeniorCount(15);
+  //       break;
+  //     case "radio_3":
+  //       setBasicCount(20);
+  //       setSeniorCount(10);
+  //       break;
+  //     default:
+  //       setBasicCount(0);
+  //       setSeniorCount(0);
+  //   }
+  // };
+
+
+  // const handleTicketTypeChange = (id) => {
+  //   setTicketType(id);
+
+  //   if (id === "radio_1") {
+  //     setBasicCount(40);
+  //     setSeniorCount(20);
+  //   } else if (id === "radio_2") {
+  //     setBasicCount(30);
+  //     setSeniorCount(15);
+  //   } else if (id === "radio_3") {
+  //     setBasicCount(20);
+  //     setSeniorCount(10);
+  //   }
+  // };
+
 
   return (
     <section className="tickets" id="tickets">
@@ -52,7 +114,8 @@ function SectionTicket() {
                           name="radio"
                           value={id}
                           checked={ticketType === id}
-                          onChange={() => setTicketType(id)}
+                          // onChange={() => setTicketType(id)}
+                          onChange={() => handleTicketTypeChange(id)}
                         />
                         <span>{label}</span>
                       </label>
@@ -70,7 +133,7 @@ function SectionTicket() {
                     type="number"
                     id="input_1"
                     value={basicCount}
-                    onChange={(e) => setBasicCount(Number(e.target.value))}
+                    onChange={(e) => handleBasicChange(Number(e.target.value))}
                   />
                   <button type="button" className="button__number button__minus" onClick={() => handleBasicChange(-1)}>-</button>
                   <button type="button" className="button__number button__plus" onClick={() => handleBasicChange(1)}>+</button>
@@ -82,7 +145,7 @@ function SectionTicket() {
                     type="number"
                     id="input_2"
                     value={seniorCount}
-                    onChange={(e) => setSeniorCount(Number(e.target.value))}
+                    onChange={(e) => handleSeniorChange(Number(e.target.value))}
                   />
                   <button type="button" className="button__number button__minus" onClick={() => handleSeniorChange(-1)}>-</button>
                   <button type="button" className="button__number button__plus" onClick={() => handleSeniorChange(1)}>+</button>
@@ -95,7 +158,7 @@ function SectionTicket() {
           </div>
         </div>
       </div>
-      {isModalOpen && <Modal onClose={closeModal} />}
+      {isModalOpen && <Modal onClose={closeModal} prices={currentPrices} />}
     </section>
   );
 }
