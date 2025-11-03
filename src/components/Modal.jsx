@@ -3,42 +3,57 @@ import Galery_3_3 from '../assets/img/galery_3_3.png';
 import Card_1 from '../assets/img/card_1.png';
 import Card_2 from '../assets/img/card_2.png';
 
-function Modal({ onClose }) {
+import DateIcon from '../assets/icon/date.png';
+import TimeIcon from '../assets/icon/Time.svg';
+import CheckIcon from '../assets/icon/check_circle.png';
+
+function Modal({ onClose = () => {} }) {
   // DEBUG: покажем, что реально приходит в onClose
   // Оставьте пока для диагностики — потом можно убрать
-//   console.log('Modal rendered. onClose type:', typeof onClose, onClose);
+  console.log('Modal rendered. onClose type:', typeof onClose);
+console.trace();
 
-//   useEffect(() => {
-//   console.log('Modal rendered. onClose type:', typeof onClose, onClose);
-// }, [onClose]);
+ // блокировка скролла страницы при открытой модалке
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev || 'auto'; };
+  }, []);
 
-//   useEffect(() => {
-    // блокируем скролл страницы
-//     const prevOverflow = document.body.style.overflow;
-//     document.body.style.overflow = "hidden";
-//     return () => {
-//       document.body.style.overflow = prevOverflow || "auto";
-//     };
-//   }, []);
-
-  // безопасный вызов onClose
   const safeClose = () => {
-    if (typeof onClose === "function") {
-      onClose();
-    } else {
-      console.warn("Modal onClose is not a function:", onClose);
-    }
+    if (typeof onClose === 'function') onClose();
+    else console.warn('Modal onClose is not a function:', onClose);
   };
 
+
   return (
-    <div className="modal">
+    <div className="modal" style={{ zIndex: 999 }}>
       {/* клик по overlay закрывает модалку */}
-      <div className="overlay" onClick={safeClose}>
+      <div className="overlay" onClick={safeClose}
+    //   style={{
+    //       position: 'fixed',
+    //       inset: 0,
+    //       display: 'flex',
+    //       alignItems: 'center',
+    //       justifyContent: 'center',
+    //       background: 'rgba(0,0,0,0.6)',
+    //       zIndex: 999
+    //     }}
+        >
         {/* остановим всплытие внутри белой части */}
         <div
           className="overlay__white"
           onClick={(e) => e.stopPropagation()}
-          style={{ maxHeight: "90vh", overflowY: "auto", WebkitOverflowScrolling: "touch" }}
+          style={{
+            position: 'relative',
+            maxHeight: '90vh',
+            overflowY: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            background: 'var(--white)',
+            padding: '30px',
+            borderRadius: 8,
+            zIndex: 1000
+          }}
         >
           {/* крестик закрытия */}
           <button
@@ -46,6 +61,17 @@ function Modal({ onClose }) {
             aria-label="Close modal"
             className="overlay__close"
             onClick={safeClose}
+            style={{
+              position: 'absolute',
+              top: 16,
+              right: 16,
+              width: 36,
+              height: 36,
+              border: 'none',
+              background: 'transparent',
+              cursor: 'pointer',
+              zIndex: 1100
+            }}
           >
             <span></span>
             <span className="two"></span>
@@ -115,15 +141,15 @@ function Modal({ onClose }) {
                   <h2 className="overview__title">Overview</h2>
                   <h3 className="overview__subtitle">Tour to Louvre</h3>
                   <div className="overview__date">
-                    <img src="assets/icon/date.png" alt="" />
+                    <img src={DateIcon} alt="" />
                     <h4>Friday, August 19</h4>
                   </div>
                   <div className="overview__time">
-                    <img src="assets/icon/Time.svg" alt="" />
+                    <img src={TimeIcon} alt="" />
                     <h4>Friday, August 19</h4>
                   </div>
                   <div className="overview__check">
-                    <img src="assets/icon/check_circle.png" alt="" />
+                    <img src={CheckIcon} alt="" />
                     <h4>Friday, August 19</h4>
                   </div>
                 </div>

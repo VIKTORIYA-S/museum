@@ -139,7 +139,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
 }
 
 .overlay.active {
@@ -170,6 +169,7 @@
   align-items: center;
   outline: none;
   border: none;
+  z-index: 10;
 }
 
 .overlay__close span {

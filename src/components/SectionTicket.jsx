@@ -1,6 +1,6 @@
 
-import Modal from './Modal';
 import { useState } from 'react';
+import Modal from './Modal';
 import Ticket_1 from '../assets/img/ticket_1.png';
 import SectionHeader from './SectionHeader';
 
@@ -8,7 +8,17 @@ function SectionTicket() {
   const [ticketType, setTicketType] = useState('radio_1');
   const [basicCount, setBasicCount] = useState(1);
   const [seniorCount, setSeniorCount] = useState(1);
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function openModal() {
+    console.log("open modal");
+    setIsModalOpen(true);
+  }
+
+  function closeModal() {
+    console.log("close modal");
+    setIsModalOpen(false);
+  }
 
   const handleBasicChange = (delta) => {
     setBasicCount(prev => Math.max(0, prev + delta));
@@ -81,11 +91,11 @@ function SectionTicket() {
                 <h5 className="form__total">Total € {totalPrice}</h5>
               </div>
             </div>
-            <button className="form__button" onClick={() => { console.log('open modal'); setIsModalOpen(true); }}>Buy Now</button>
+            <button className="form__button" onClick={openModal}>Buy Now</button>
           </div>
         </div>
       </div>
-      {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
+      {isModalOpen && <Modal onClose={closeModal} />}
     </section>
   );
 }

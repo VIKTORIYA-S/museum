@@ -26,7 +26,7 @@ function App() {
     <>
       <Header />
         <main class="main">
-          <Modal />
+          {/* <Modal /> */}
           <Hero />
           <WelcomeSection />
           <VisitingSection />
