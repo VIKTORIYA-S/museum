@@ -2,7 +2,7 @@
   "name": "museum",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://VIKTORIYA-S.github.io/museum",
+  
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,11 +13,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.5",
     "react-slick": "^0.31.0",
-    "slick-carousel": "^1.8.1",
-    "gh-pages": "^6.3.0"
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

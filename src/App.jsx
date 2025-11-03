@@ -1,7 +1,7 @@
-import { useState } from "react"
+// import { useState } from "react"
 
-import Header from "./components/Header";
-import Hero from "./components/Hero";
+import Header from "./components/Header/Header";
+// import Hero from "./components/Hero";
 import WelcomeSection from "./components/WelcomeSection";
 import VisitingSection from "./components/VisitingSection";
 import SectionVideo from "./components/SectionVideo";
@@ -17,24 +17,27 @@ import "slick-carousel/slick/slick-theme.css";
 import './styles_scss/main.scss';
 
 import Modal from "./components/Modal";
+import { RouterProvider } from "react-router-dom";
+import { router } from './router';
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-      <Header />
-        <main class="main">
+      {/* <Header /> */}
+        <main className="main">
+          <RouterProvider router={router}/>
           {/* <Modal /> */}
-          <Hero />
-          <WelcomeSection />
-          <VisitingSection />
-          <SectionVideo />
-          <SectionGallery />
-          <SectionTicket />
-          <Parallax />
-          <Contacts />
+          {/* <Hero /> */}
+          {/* <WelcomeSection /> */}
+          {/* <VisitingSection /> */}
+          {/* <SectionVideo /> */}
+          {/* <SectionGallery /> */}
+          {/* <SectionTicket /> */}
+          {/* <Parallax /> */}
+          {/* <Contacts /> */}
         </main>
       <Footer />
     </>

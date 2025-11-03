@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Burger from "./Burger";
-import Logo from "./Logo";
-import Navigation from "./Navigation";
+import Burger from "../Burger";
+import Logo from "../Logo";
+import Navigation from "./Navigation/Navigation";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);

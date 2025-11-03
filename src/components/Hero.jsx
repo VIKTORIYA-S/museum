@@ -1,61 +1,61 @@
-import { useEffect, useRef } from 'react';
-import Swiper from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
+// import { useEffect, useRef } from 'react';
+// import Swiper from 'swiper';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
 
-import hero from '../assets/img/hero.png';
-import galery141 from '../assets/img/galery141.png';
-import galery111 from '../assets/img/galery111.png';
-import galery_1_4 from '../assets/img/galery_1_4.png';
-import galery_2_4 from '../assets/img/galery_2_4.png';
+// import hero from '../assets/img/hero.png';
+// import galery141 from '../assets/img/galery141.png';
+// import galery111 from '../assets/img/galery111.png';
+// import galery_1_4 from '../assets/img/galery_1_4.png';
+// import galery_2_4 from '../assets/img/galery_2_4.png';
 
 function Hero() {
-  const swiperRef = useRef(null);
-  const swiperInstance = useRef(null);
+  // const swiperRef = useRef(null);
+  // const swiperInstance = useRef(null);
 
-  useEffect(() => {
-    const nextBtn = document.querySelector('.swiper-button-next');
-    const prevBtn = document.querySelector('.swiper-button-prev');
+  // useEffect(() => {
+  //   const nextBtn = document.querySelector('.swiper-button-next');
+  //   const prevBtn = document.querySelector('.swiper-button-prev');
 
-    if (swiperRef.current && nextBtn && prevBtn) {
-      swiperInstance.current = new Swiper(swiperRef.current, {
-        loop: false,
-        navigation: {
-          nextEl: nextBtn,
-          prevEl: prevBtn,
-        },
-        on: {
-          init: function () {
-            const total = document.querySelector('.hero__footer_number-2');
-            if (total) {
-              total.textContent = String(this.slides.length).padStart(2, '0');
-            }
-          },
-          slideChange: function () {
-            const current = document.querySelector('.hero__footer_number-1');
-            if (current) {
-              current.textContent = String(this.activeIndex + 1).padStart(2, '0');
-            }
+  //   if (swiperRef.current && nextBtn && prevBtn) {
+  //     swiperInstance.current = new Swiper(swiperRef.current, {
+  //       loop: false,
+  //       navigation: {
+  //         nextEl: nextBtn,
+  //         prevEl: prevBtn,
+  //       },
+  //       on: {
+  //         init: function () {
+  //           const total = document.querySelector('.hero__footer_number-2');
+  //           if (total) {
+  //             total.textContent = String(this.slides.length).padStart(2, '0');
+  //           }
+  //         },
+  //         slideChange: function () {
+  //           const current = document.querySelector('.hero__footer_number-1');
+  //           if (current) {
+  //             current.textContent = String(this.activeIndex + 1).padStart(2, '0');
+  //           }
 
-            document.querySelectorAll('.square').forEach((el, index) => {
-              el.classList.toggle('square--active', index === this.activeIndex);
-            });
-          },
-        },
-      });
+  //           document.querySelectorAll('.square').forEach((el, index) => {
+  //             el.classList.toggle('square--active', index === this.activeIndex);
+  //           });
+  //         },
+  //       },
+  //     });
 
-      document.querySelectorAll('.square').forEach((el, index) => {
-        el.addEventListener('click', () => {
-          swiperInstance.current.slideTo(index);
-        });
-      });
-    }
-  }, []);
+  //     document.querySelectorAll('.square').forEach((el, index) => {
+  //       el.addEventListener('click', () => {
+  //         swiperInstance.current.slideTo(index);
+  //       });
+  //     });
+  //   }
+  // }, []);
 
   return (
     <section className="hero">
       <div className="container hero__container">
-        <div className="swiper image-slider" ref={swiperRef}>
+        {/* <div className="swiper image-slider" ref={swiperRef}>
           <div className="swiper-wrapper">
             <img className="hero__img swiper-slide" src={hero} alt="Mona Lisa" />
             <img className="hero__img swiper-slide" src={galery141} alt="Venus de Milo" />
@@ -63,7 +63,7 @@ function Hero() {
             <img className="hero__img swiper-slide" src={galery_1_4} alt="The Coronation of Napoleon" />
             <img className="hero__img swiper-slide" src={galery_2_4} alt="Liberty Leading the People" />
           </div>
-        </div>
+        </div> */}
 
         <div className="hero__wrapper">
           <h1 className="hero__title">Welcome <br /> to the Louvre</h1>
