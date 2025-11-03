@@ -1,4 +1,5 @@
-import triangle from "../assets/icon/triangle.svg";
+import triangle from "../../../assets/icon/triangle.svg";
+import "./Logo.scss";
 
 function Logo() {
   return (

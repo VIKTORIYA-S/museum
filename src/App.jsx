@@ -2,14 +2,9 @@
 
 import Header from "./components/Header/Header";
 // import Hero from "./components/Hero";
-import WelcomeSection from "./components/WelcomeSection";
-import VisitingSection from "./components/VisitingSection";
-import SectionVideo from "./components/SectionVideo";
-import SectionGallery from "./components/SectionGallery";
-import SectionTicket from "./components/SectionTicket";
-import Parallax from "./components/Parallax";
-import Contacts from "./components/Contacts";
-import Footer from "./components/Footer";
+
+
+
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -39,7 +34,7 @@ function App() {
           {/* <Parallax /> */}
           {/* <Contacts /> */}
         </main>
-      <Footer />
+      
     </>
   )
 }

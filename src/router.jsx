@@ -4,10 +4,10 @@ import Hero from './components/Hero';
 import VisitingSection from './components/VisitingSection';
 import { NotFound } from './pages/NotFound';
 import SectionVideo from './components/SectionVideo';
-import SectionGallery from './components/SectionGallery';
+import SectionGallery from '../src/pages/gallery/SectionGallery';
 import SectionTicket from './components/SectionTicket';
 import Parallax from './components/Parallax';
-import Contacts from './components/Contacts';
+import Contacts from '../src/pages/contacts/Contacts';
 
 export const router = createBrowserRouter(
   [

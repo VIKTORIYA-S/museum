@@ -1,3 +1,6 @@
+import './Burger.scss';
+
+
 function Burger({ isOpen, onToggle }) {
   return (
     <button

@@ -31,7 +31,8 @@
     position: relative;
     width: 100%;
     // padding-bottom: 62.5%;
-    height: 0;
+    // height: 0;
+    height: auto;
   }
 
   &__map {
@@ -145,11 +146,20 @@
     &__map-wrap {
       width: 100%;
       max-width: 100%;
-      padding-bottom: calc(360 / 1000 * 100%); /* примерно 36% высоты */
+      padding-bottom: 20px;
+      height: 300px;
+      // padding-bottom: calc(360 / 1000 * 100%); 
+      /* примерно 36% высоты */
     }
 
     /* если нужно — добавим небольшой отступ между текстом и картой */
-    &__map-wrap { margin-top: 12px; }
+  
+
+    &__map {
+      position: static;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 

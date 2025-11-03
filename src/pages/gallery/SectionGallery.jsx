@@ -1,20 +1,20 @@
-import Galery_1_1 from '../assets/img/galery_1_1.png';
-import Galery_1_2 from '../assets/img/galery_1_2.png';
-import Galery_1_3 from '../assets/img/galery_1_3.png';
-import Galery_1_4 from '../assets/img/galery_1_4.png';
-import Galery_2_1 from '../assets/img/galery_2_1.png';
-import Galery_2_2 from '../assets/img/galery_2_2.png';
-import Galery_2_3 from '../assets/img/galery_2_3.png';
-import Galery_2_4 from '../assets/img/galery_2_4.png';
-import Galery_3_1 from '../assets/img/galery_3_1.png';
-import Galery_3_2 from '../assets/img/galery_3_2.png';
-import Galery_3_3 from '../assets/img/galery_3_3.png';
-import Galery_3_4 from '../assets/img/galery_3_4.png';
-import SectionHeader from "./SectionHeader";
+import Galery_1_1 from '../../assets/img/galery_1_1.png';
+import Galery_1_2 from '../../assets/img/galery_1_2.png';
+import Galery_1_3 from '../../assets/img/galery_1_3.png';
+import Galery_1_4 from '../../assets/img/galery_1_4.png';
+import Galery_2_1 from '../../assets/img/galery_2_1.png';
+import Galery_2_2 from '../../assets/img/galery_2_2.png';
+import Galery_2_3 from '../../assets/img/galery_2_3.png';
+import Galery_2_4 from '../../assets/img/galery_2_4.png';
+import Galery_3_1 from '../../assets/img/galery_3_1.png';
+import Galery_3_2 from '../../assets/img/galery_3_2.png';
+import Galery_3_3 from '../../assets/img/galery_3_3.png';
+import Galery_3_4 from '../../assets/img/galery_3_4.png';
+import SectionHeader from "../../components/SectionHeader";
 import { useEffect } from "react";
 
 
-
+import "./SectionGallery.scss";
 
 function SectionGallery() {
   useEffect(() => {

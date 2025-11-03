@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import "./Navigation.scss";
 
 function Navigation({ isOpen }) {
 	return (
