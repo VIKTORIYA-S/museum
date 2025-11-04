@@ -170,7 +170,7 @@
     font-family: var(--font-text);
     font-size: 18px;
     font-weight: 400;
-    color: var(--bg-dark);
+    color: white;
 }
 
 .price__place,
@@ -222,7 +222,7 @@
     gap: 20px;
 }
 
-.verview__title {
+.overview__title {
     font-family: var(--font-text);
     font-size: 32px;
     font-weight: 500;
@@ -298,7 +298,7 @@
     font-family: var(--font-text);
     font-size: 22px;
     font-weight: 400;
-    color: #030303;
+    color: white;
 }
 
 .overview__line {
@@ -320,6 +320,14 @@ span {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+    
+    h3 {
+        color: white;
+    }
+
+    span {
+        color: white;
+    }
 }
 
 .card__1,
