@@ -4,10 +4,11 @@ import Hero from './components/Hero';
 import VisitingSection from './components/VisitingSection';
 import { NotFound } from './pages/NotFound';
 import SectionVideo from './components/SectionVideo';
-import SectionGallery from '../src/pages/gallery/SectionGallery';
-import SectionTicket from './components/SectionTicket';
+import SectionGallery from './pages/gallery/SectionGallery';
+import SectionTicket from './pages/tickets/SectionTicket';
 import Parallax from './components/Parallax';
-import Contacts from '../src/pages/contacts/Contacts';
+import Contacts from './pages/contacts/Contacts';
+import FormBuyTickets from './pages/tickets/formBuyTickets/FormBuyTickets';
 
 export const router = createBrowserRouter(
   [
@@ -16,7 +17,7 @@ export const router = createBrowserRouter(
       element: <Layout/>,
       children: [
         {
-          path: '/museum',
+          path: '/',
           element: <Hero/>,
           errorElement: <NotFound/>
         },
@@ -40,6 +41,10 @@ export const router = createBrowserRouter(
         {
           path: '/tickets',
           element: <SectionTicket/>
+        },
+        {
+          path: '/buy',
+          element: <FormBuyTickets/>
         },
         {
           path: '/parallax',
