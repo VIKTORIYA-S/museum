@@ -6,17 +6,17 @@ function Navigation({ isOpen }) {
 		<nav className={`header__nav ${isOpen ? 'active' : ''}`}>
 			<ul className='header__list'>
 				<li className='header__list_item'>
-					<NavLink to='/visiting' className='footer__list_link'>
-						Visiting
-					</NavLink>
-				</li>
-				<li className='header__list_item'>
 					<NavLink to='/explore' className='footer__list_link'>
 						Explore
 					</NavLink>
 				</li>
 				<li className='header__list_item'>
-					<NavLink to='/explore' className='footer__list_link' >
+					<NavLink to='/tour' className='footer__list_link'>
+						Virtual tour
+					</NavLink>
+				</li>
+				<li className='header__list_item'>
+					<NavLink to='/video' className='footer__list_link' >
 						Video
 					</NavLink>
 				</li>

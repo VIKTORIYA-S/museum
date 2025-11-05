@@ -61,11 +61,21 @@ function Hero() {
         <SectionHeader />
         <div className="swiper image-slider" ref={swiperRef}>
           <div className="swiper-wrapper">
-            <img className="hero__img swiper-slide" src={hero} alt="Mona Lisa" />
-            <img className="hero__img swiper-slide" src={galery141} alt="Venus de Milo" />
-            <img className="hero__img swiper-slide" src={galery111} alt="Winged Victory of Samothrace" />
-            <img className="hero__img swiper-slide" src={galery_1_4} alt="The Coronation of Napoleon" />
-            <img className="hero__img swiper-slide" src={galery_2_4} alt="Liberty Leading the People" />
+            <div className="swiper-slide">
+              <img className="hero__img swiper-slide" src={hero} alt="Mona Lisa" />
+            </div>
+            <div className="swiper-slide">
+              <img className="hero__img swiper-slide" src={galery141} alt="Venus de Milo" />
+            </div>
+            <div className="swiper-slide">
+              <img className="hero__img swiper-slide" src={galery111} alt="Winged Victory of Samothrace" />
+            </div>
+            <div className="swiper-slide">
+              <img className="hero__img swiper-slide" src={galery_1_4} alt="The Coronation of Napoleon" />
+            </div>
+            <div className="swiper-slide">
+              <img className="hero__img swiper-slide" src={galery_2_4} alt="Liberty Leading the People" />
+            </div>
           </div>
         </div>
 

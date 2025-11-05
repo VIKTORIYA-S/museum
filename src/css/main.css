@@ -186,8 +186,8 @@
 }
 
 .overlay__container {
-  width: 970px;
-  height: 663px;
+  /* width: 970px;
+  height: 663px; */
   margin: 0 auto;
   display: flex;
   justify-content: space-between;

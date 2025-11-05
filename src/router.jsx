@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Layout } from './layouts/Layout';
-import Hero from './components/Hero';
+import Hero from './pages/hero/Hero';
 import VisitingSection from './components/VisitingSection';
 import { NotFound } from './pages/NotFound';
 import SectionVideo from './components/SectionVideo';
@@ -9,6 +9,7 @@ import SectionTicket from './pages/tickets/SectionTicket';
 import Parallax from './components/Parallax';
 import Contacts from './pages/contacts/Contacts';
 import FormBuyTickets from './pages/tickets/formBuyTickets/FormBuyTickets';
+import WelcomeSection from './pages/welcomeSection/WelcomeSection';
 
 export const router = createBrowserRouter(
   [
@@ -22,21 +23,21 @@ export const router = createBrowserRouter(
           errorElement: <NotFound/>
         },
         {
-          path: '/visiting',
+          path: '/explore',
           element: <VisitingSection/>
         },
       
         {
-          path: '/explore',
+          path: '/tour',
+          element: <WelcomeSection />
+        },
+        {
+          path: '/video',
           element: <SectionVideo/>
         },
         {
           path: '/gallery',
           element: <SectionGallery/>
-        },
-        {
-          path: '/tickets',
-          element: <SectionTicket/>
         },
         {
           path: '/tickets',

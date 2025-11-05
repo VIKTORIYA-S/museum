@@ -1,11 +1,20 @@
+section {
+  width: 100%;
+}
+
 .tickets {
     padding: 75px 0;
     background: var(--white)
 }
 
+.tickets__container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .tickets__wrapper {
     display: flex;
-    gap: 60px;
+    gap: 40px;
 }
 
 .tickets__info {
