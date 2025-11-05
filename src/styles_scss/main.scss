@@ -3,9 +3,7 @@
 @use "./components/welcomeCard";
 @use "./components/welcomeList";
 @use "./components/welcomePlase";
-
 @use "./components/parallax";
-
 @use "./components/footer";
 
 @use "./vars";
@@ -13,6 +11,20 @@
 @use "./components/sectionHeader";
 @use "./components/sectionVideo";
 @use "./components/visitingSection";
+@use "../../src/components/Header/Burger/Burger.scss";
+@use "../../src/components/Header/Logo/Logo.scss";
+@use "../../src/components/Header/Header.scss";
+@use "./components/welcomeCardImg.scss";
+@use "../../src/pages/contacts/Contacts.scss";
+@use "../../src/pages/gallery/SectionGallery.scss";
+@use "../../src/pages/hero/Hero.scss";
+@use "../../src/pages/tickets/SectionTicket.scss";
+@use "../../src/pages/tickets/formBuyTickets/FormBuyTickets.scss";
+@use "../../src/pages/welcomeSection/WelcomeCard.scss";
+@use "../../src/pages/welcomeSection/WelcomeCardImg.scss";
+@use "../../src/pages/welcomeSection/WelcomeList.scss";
+@use "../../src/pages/welcomeSection/WelcomePlase.scss";
+@use "../../src/pages/welcomeSection/WelcomeSection.scss";
 
 
 

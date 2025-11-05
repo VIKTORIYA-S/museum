@@ -384,12 +384,11 @@ span {
     }
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 985px) {
     .overlay__container {
         flex-direction: column;
         gap: 20px;
     }
-    
 }
 
 @media (max-width: 868px) {
@@ -468,6 +467,10 @@ span {
   .overlay__white {
     max-height: none;
     overflow: visible;
+  }
+
+  .form__number input {
+    padding-left: 72px;
   }
 }
 

@@ -50,11 +50,55 @@
 }
 }
 
-@media (max-width: 860px) {
-        .header__nav {
-            display: none;
-        }
-    }
+
+@media (max-width: 1120px) {
+.header__nav.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 125px;
+    right: -20px;
+    background-color: var(--black);
+    width: 180px;
+    padding: 15px;
+    z-index: 9;
+  }
+
+  .header__nav {
+    position: fixed;
+    top: 125px;
+    right: -100%; /* прячем за экраном */
+    width: 180px; /* можно 70%, если хочешь шире */
+    height: 60vh;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 40px 20px;
+    transition: right 0.5s ease-in-out; /* плавное появление */
+    z-index: 9;
+  }
+
+  /* пункты меню */
+  .header__list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header__list_item {
+    margin: 10px 0;
+    font-size: 22px;
+  }
+}
+
+
+// @media (max-width: 860px) {
+        // .header__nav {
+            // display: none;
+        // }
+    // }
 
 
 @media (max-width: 860px) {
@@ -65,7 +109,7 @@
     top: 125px;
     right: -20px;
     background-color: var(--black);
-    width: 50%;
+    width: 180px;
     padding: 15px;
     z-index: 9;
   }
@@ -74,8 +118,8 @@
     position: fixed;
     top: 125px;
     right: -100%; /* прячем за экраном */
-    width: 60%; /* можно 70%, если хочешь шире */
-    height: 50vh;
+    width: 180px; /* можно 70%, если хочешь шире */
+    height: 60vh;
     background-color: var(--black);
     display: flex;
     flex-direction: column;

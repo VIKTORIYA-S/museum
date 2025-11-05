@@ -72,7 +72,9 @@
 
 
 
-@media (max-width: 860px) {
+
+
+@media (max-width: 1120px) {
   .burger {
     display: flex;
     position: absolute;
@@ -82,5 +84,9 @@
     z-index: 10;
     background-color: transparent;
     cursor: pointer;
+  }
+
+  .header__nav {
+    height: 60vh;
   }
 }
