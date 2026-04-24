@@ -9,7 +9,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // display: none;
 }
 
 .overlay.active {
@@ -22,7 +21,6 @@
     left: 0;
     height: 845px;
     background-color: var(--white);
-    // width: 1055px;
     padding: 90px 0;
     margin: 0 auto;
     transition: all 0.5s ease-in-out;
@@ -57,7 +55,6 @@
 }
 
 .overlay__container {
-    // max-width: 970px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

@@ -12,7 +12,7 @@ function Navigation({ isOpen }) {
 				</li>
 				<li className='header__list_item'>
 					<NavLink to='/tour' className='footer__list_link'>
-						Virtual tour
+						Virtual Tour
 					</NavLink>
 				</li>
 				<li className='header__list_item'>

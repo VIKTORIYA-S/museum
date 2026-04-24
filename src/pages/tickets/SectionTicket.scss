@@ -271,7 +271,7 @@ h4.form__title {
   }
 
   .form {
-    gap: 100px;
+    gap: 0;
   }
 
   .form__left {
@@ -312,7 +312,7 @@ h4.form__title {
   .form {
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 0;
     height: auto;
   }
 
@@ -361,7 +361,7 @@ h4.form__title {
   }
 
   .form {
-    gap: 30px;
+    gap: 0;
   }
 
   .form__left {
@@ -441,4 +441,19 @@ h4.form__title {
   .form__total {
     font-size: 18px;
   }
+}
+
+.parallax-section {
+    background-image: url(../src/assets/img/parallax_1.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    min-height: 400px;
+    margin-top: 100px;
 }

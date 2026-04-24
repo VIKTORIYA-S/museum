@@ -1,4 +1,5 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter,
+  RouterProvider, } from 'react-router-dom';
 import { Layout } from './layouts/Layout';
 import Hero from './pages/hero/Hero';
 import VisitingSection from './components/VisitingSection';
@@ -11,11 +12,12 @@ import Contacts from './pages/contacts/Contacts';
 import FormBuyTickets from './pages/tickets/formBuyTickets/FormBuyTickets';
 import WelcomeSection from './pages/welcomeSection/WelcomeSection';
 
-export const router = createBrowserRouter(
+export const router = createHashRouter(
   [
     {
       path: '/',
-      element: <Layout/>,
+      element: <Layout />,
+      errorElement: <NotFound />,
       children: [
         {
           path: '/',
@@ -26,7 +28,6 @@ export const router = createBrowserRouter(
           path: '/explore',
           element: <VisitingSection/>
         },
-      
         {
           path: '/tour',
           element: <WelcomeSection />
@@ -57,5 +58,8 @@ export const router = createBrowserRouter(
         },
       ]
     }
-  ]
+  ],
+  {
+    basename: import.meta.env.DEV ? '/' : '/museum',
+  },
 )

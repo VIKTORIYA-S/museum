@@ -6,6 +6,7 @@ import './SectionTicket.scss';
 import { useNavigate } from 'react-router-dom';
 
 import { TicketContext } from './TicketContext';
+import Parallax from '../../components/Parallax';
 
 function SectionTicket() {
 	const [ticketType, setTicketType] = useState('radio_1');
@@ -159,6 +160,7 @@ function SectionTicket() {
 					</div>
 				</div>
 			</div>
+			<Parallax />
 		</section>
 	);
 }

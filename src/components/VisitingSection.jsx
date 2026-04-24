@@ -80,6 +80,7 @@ function VisitingSection() {
             The cleaning provoked furious protests, not because the picture had
             been damaged in any way, but because it looked different.
           </p>
+          <div className="hero__button">See more</div>
         </div>
 
         <div className="visiting__img" ref={containerRef}>

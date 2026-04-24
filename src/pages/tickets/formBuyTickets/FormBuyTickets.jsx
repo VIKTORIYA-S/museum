@@ -9,6 +9,8 @@ import CheckIcon from '../../../assets/icon/check_circle.png';
 import './FormBuyTickets.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useState, useMemo } from 'react';
+import { useEffect } from 'react';
+
 
 function FormBuyTickets() {
 	const { state } = useLocation();
@@ -37,16 +39,12 @@ function FormBuyTickets() {
 		radio_3: 'Combined ticket',
 	};
 
-	
 
 	if (!state) {
-		// если пользователь попал на /buy без выбора билета
 		navigate('/', { replace: true });
 		return null;
 	}
 
-
-	
 
 	const handleBasicChange = (delta) => {
 		setBasic((prev) => Math.max(0, prev + delta));
@@ -66,6 +64,55 @@ function FormBuyTickets() {
 const closeForm = () => {
   navigate('/');
 };
+
+
+const [selectedDate, setSelectedDate] = useState('');
+  const [selectedTime, setSelectedTime] = useState('');
+
+  const formatDate = (dateStr) => {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('en-US', {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+
+
+  useEffect(() => {
+  const formData = {
+    selectedDate,
+    selectedTime,
+    basic,
+    senior,
+    ticketType,
+  };
+  localStorage.setItem('ticketFormData', JSON.stringify(formData));
+}, [selectedDate, selectedTime, basic, senior, ticketType]);
+
+useEffect(() => {
+  const savedData = localStorage.getItem('ticketFormData');
+  if (savedData) {
+    const {
+      selectedDate,
+      selectedTime,
+      basic,
+      senior,
+      ticketType,
+    } = JSON.parse(savedData);
+
+    if (selectedDate) setSelectedDate(selectedDate);
+    if (selectedTime) setSelectedTime(selectedTime);
+    if (typeof basic === 'number') setBasic(basic);
+    if (typeof senior === 'number') setSenior(senior);
+    // ticketType не нужно восстанавливать, если он уже пришёл из state
+  }
+}, []);
+
+
+
+
 
 	return (
 		<div className='modal'>
@@ -112,14 +159,15 @@ const closeForm = () => {
 							className='ticket-form__input-date'
 							type='date'
 							id='input-date'
-							placeholder='Date'
+							value={selectedDate}
+          					onChange={(e) => setSelectedDate(e.target.value)}
 						/>
 						<input
 							className='ticket-form__input-time'
-							name='time'
 							type='time'
 							id='input-time'
-							placeholder='Time'
+							value={selectedTime}
+          					onChange={(e) => setSelectedTime(e.target.value)}
 						/>
 					</div>
 					<input
@@ -146,7 +194,7 @@ const closeForm = () => {
 						id='input-type'
 						placeholder='Ticket Type'
 						value={ticketLabels[ticketType] || ticketType}
-            readOnly
+						readOnly
 					/>
 					<div className='price'>
 						<span className='price__text'>Entry ticket</span>
@@ -200,16 +248,24 @@ const closeForm = () => {
 							<h2 className='overview__title'>Overview</h2>
 							<h3 className='overview__subtitle'>Tour to Louvre</h3>
 							<div className='overview__date'>
-								<img src={DateIcon} alt='' />
-								<h4>Friday, August 19</h4>
+								<img src={DateIcon} alt='Date icon'/>
+								<h4>{selectedDate
+									? formatDate(selectedDate)
+									: 'Select date'}
+								</h4>
 							</div>
 							<div className='overview__time'>
-								<img src={TimeIcon} alt='' />
-								<h4>Friday, August 19</h4>
+								<img src={TimeIcon} alt='Time icon' />
+								<h4>{selectedTime
+									? selectedTime
+									: 'Select time'}
+								</h4>
 							</div>
 							<div className='overview__check'>
 								<img src={CheckIcon} alt='' />
-								<h4>Friday, August 19</h4>
+								<h4>{ticketLabels
+									? ticketLabels[ticketType]
+									: 'Ticket Type'}</h4>
 							</div>
 						</div>
 						<img className='profile__foto' src={Galery_3_3} alt='' />
