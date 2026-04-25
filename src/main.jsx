@@ -1,7 +1,7 @@
 // import { StrictMode } from 'react'
 // import { createRoot } from 'react-dom/client'
 // // import './index.css'
-// import App from './App.jsx'
+import App from './App.jsx'
 
 
 // import React from "react";
@@ -22,10 +22,11 @@ import { RouterProvider } from "react-router-dom";
 import "./styles_scss/main.scss";
 
 // импортируете ваш router из файла, где он описан
-import { router } from "./router";
+// import { router } from "./router";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    {/* <RouterProvider router={router} /> */}
+    <App />
   </StrictMode>
 );
