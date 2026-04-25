@@ -8,7 +8,13 @@ import react from '@vitejs/plugin-react'
 //   plugins: [react()],
 // })
 
-export default defineConfig(({ mode }) => ({
+// export default defineConfig(({ mode }) => ({
+//   plugins: [react()],
+//   base: mode === "production" ? "/museum/" : "/",
+// }));
+
+
+export default defineConfig({
   plugins: [react()],
-  base: mode === "production" ? "/museum/" : "/",
-}));
+  base: process.env.NODE_ENV === "production" ? "/museum" : "",
+})
