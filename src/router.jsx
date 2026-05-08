@@ -1,4 +1,4 @@
-import { createHashRouter,
+import { createBrowserRouter,
   RouterProvider, } from 'react-router-dom';
 import { Layout } from './layouts/Layout';
 import Hero from './pages/hero/Hero';
@@ -12,7 +12,7 @@ import Contacts from './pages/contacts/Contacts';
 import FormBuyTickets from './pages/tickets/formBuyTickets/FormBuyTickets';
 import WelcomeSection from './pages/welcomeSection/WelcomeSection';
 
-export const router = createHashRouter(
+export const router = createBrowserRouter(
   [
     {
       path: '/',
@@ -60,6 +60,7 @@ export const router = createHashRouter(
     }
   ],
   {
-    basename: import.meta.env.DEV ? '/' : '/museum',
+    // basename: import.meta.env.DEV ? '/' : '/museum',
+    basename: import.meta.env.BASE_URL
   },
 )

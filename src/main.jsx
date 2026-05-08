@@ -26,7 +26,6 @@ import "./styles_scss/main.scss";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    {/* <RouterProvider router={router} /> */}
     <App />
   </StrictMode>
 );
